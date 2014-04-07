@@ -1,0 +1,25 @@
+{
+    "name":        "tomkyle/cookies",
+    "type":        "library",
+
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name":  "Carsten Witt",
+            "email": "tomkyle@posteo.de",
+            "role":  "Developer"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.4.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "tomkyle\\Cookies\\": "src/"
+        }
+    }
+
+}
