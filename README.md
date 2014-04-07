@@ -17,7 +17,7 @@ This library has no dependencies. Install from command line or `composer.json` f
 
 ##Classes Overview
 
-- Cookie- CookieAbstract- CookieInterface- RequestCookie- SendCookie- UnsetCookie
+- *interface* CookieInterface- *abstract* CookieAbstract- Cookie *extends* CookieAbstract- RequestCookie *extends* CookieAbstract- SendCookie- UnsetCookie
 
 
 ##Testing
