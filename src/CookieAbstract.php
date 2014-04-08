@@ -80,7 +80,7 @@ abstract class CookieAbstract implements CookieInterface
 
 
 
-    public function setValidUntil( \DateTimeInterface $valid_until = null)
+    public function setValidUntil( \DateTime $valid_until = null)
     {
         $this->valid_until = $valid_until;
         return $this;

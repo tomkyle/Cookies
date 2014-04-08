@@ -37,7 +37,7 @@ interface CookieInterface
     public function setName( $name );
     public function getName();
 
-    public function setValidUntil( \DateTimeInterface $valid_until = null);
+    public function setValidUntil( \DateTime $valid_until = null);
     public function getValidUntil();
 
 }
