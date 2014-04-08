@@ -44,7 +44,7 @@ abstract class CookieAbstract implements CookieInterface
 
 
     /**
-     * @var \DateTimeInterface
+     * @var \DateTime
      */
     public $valid_until;
 

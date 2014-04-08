@@ -34,7 +34,7 @@ class Cookie extends CookieAbstract implements CookieInterface
     /**
      * @param string $name
      * @param mixed  $value Default: `null`
-     * @param DateTimeInterface $valid_until Instance of `DateTimeInterface`, default: `null`
+     * @param DateTime $valid_until Instance of `DateTime`, default: `null`
      *
      * @uses setName()
      * @uses setValue()
