@@ -40,7 +40,7 @@ class Cookie extends CookieAbstract implements CookieInterface
      * @uses setValue()
      * @uses setValidUntil()
      */
-    public function __construct($name, $value = null, \DateTimeInterface $valid_until = null)
+    public function __construct($name, $value = null, \DateTime $valid_until = null)
     {
         $this->setName(  $name );
         $this->setValue( $value );
