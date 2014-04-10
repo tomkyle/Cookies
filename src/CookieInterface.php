@@ -27,17 +27,28 @@ namespace tomkyle\Cookies;
 
 /**
  * CookieInterface
+ *
+ * Interceptors all Cookie instances must provide.
  */
 interface CookieInterface
 {
 
+    /**
+     * @param string $value
+     */
     public function setValue( $value );
     public function getValue();
 
+    /**
+     * @param string $name
+     */
     public function setName( $name );
     public function getName();
 
-    public function setValidUntil( \DateTime $valid_until = null);
-    public function getValidUntil();
+    /**
+     * @param /DateTime $expire Expiration `DateTime` instance
+     */
+    public function setExpiration( \DateTime $expire = null);
+    public function getExpiration();
 
 }

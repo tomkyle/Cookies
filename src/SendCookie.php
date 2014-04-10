@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of tomkyle/cookies.
+ * This file is part of tomkyle/cookies
  *
  * Copyright (c) 2014 Carsten Witt
  *
@@ -27,6 +27,24 @@ namespace tomkyle\Cookies;
 
 /**
  * SendCookie
+ *
+ * Sends (or stores, respectively) the cookie given:
+ *
+ * - Stores in `$_COOKIE` Superglobal
+ * - Sends via `setcookie`
+ *
+ * Currently, only these typical cookie attributes are supported:
+ *
+ * - Cookie name
+ * - Cookie value
+ * - Expiration/Life time
+ *
+ * Not supported are, c.f. PHP documentation on setcokie:
+ *
+ * - Path
+ * - Domain
+ * - Secure HTTPS only
+ * - httponly protection.
  */
 class SendCookie
 {
@@ -37,14 +55,14 @@ class SendCookie
         $name  = $cookie->getName();
         $value = $cookie->getValue();
 
-        $valid_until = $cookie->getValidUntil();
-        $valid_until = $valid_until ? $valid_until->getTimestamp() : null;
+        $expire = $cookie->getExpiration();
+        $expire = $expire ? $expire->getTimestamp() : null;
 
         // Populate current superglobals
         $_COOKIE[ $name ] = $value;
 
         // Unset over HTTP
-        setcookie( $name, $value, $valid_until );
+        setcookie( $name, $value, $expire );
     }
 
 
