@@ -50,8 +50,15 @@ class Cookie extends CookieAbstract implements CookieInterface
     public function __construct($name, $value = null, \DateTime $expire = null)
     {
         $this->setName(  $name );
-        $this->setValue( $value );
-        $this->setExpiration( $expire );
+
+        if (!is_null( $value )) {
+            $this->setValue( $value );
+        }
+
+        if (!is_null( $expire )) {
+            $this->setExpiration( $expire );
+        }
+
     }
 
 
