@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of tomkyle/cookies.
+ * This file is part of tomkyle/cookies
  *
  * Copyright (c) 2014 Carsten Witt
  *
@@ -27,6 +27,12 @@ namespace tomkyle\Cookies;
 
 /**
  * UnsetCookie
+ *
+ * Unsets the given cookie this way:
+ *
+ * - Sets cookie value to `null`
+ * - Unsets in `$_COOKIE` Superglobal
+ * - Unsets via `setcookie` function
  */
 class UnsetCookie
 {

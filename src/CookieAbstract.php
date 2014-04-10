@@ -27,6 +27,8 @@ namespace tomkyle\Cookies;
 
 /**
  * CookieAbstract
+ *
+ * Implements the interceptors prescribed by the CookieInterface.
  */
 abstract class CookieAbstract implements CookieInterface
 {
@@ -46,12 +48,15 @@ abstract class CookieAbstract implements CookieInterface
     /**
      * @var \DateTime
      */
-    public $valid_until;
+    public $expire;
 
 
 
 
 
+    /**
+     * @param string $value
+     */
     public function setValue( $value )
     {
         $this->value = $value;
@@ -66,6 +71,9 @@ abstract class CookieAbstract implements CookieInterface
 
 
 
+    /**
+     * @param string $name
+     */
     public function setName( $name )
     {
         $this->name = $name;
@@ -79,16 +87,18 @@ abstract class CookieAbstract implements CookieInterface
 
 
 
-
-    public function setValidUntil( \DateTime $valid_until = null)
+    /**
+     * @param /DateTime $expire Expiration `DateTime` instance
+     */
+    public function setExpiration( \DateTime $expire = null)
     {
-        $this->valid_until = $valid_until;
+        $this->expire = $expire;
         return $this;
     }
 
-    public function getValidUntil()
+    public function getExpiration()
     {
-        return $this->valid_until;
+        return $this->expire;
     }
 
 
