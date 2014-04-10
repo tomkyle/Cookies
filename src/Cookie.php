@@ -27,24 +27,31 @@ namespace tomkyle\Cookies;
 
 /**
  * Cookie
+ *
+ * Represents a Cookie that can be set and sent.
+ * These typical cookie attributes are supported:
+ *
+ * - Cookie name
+ * - Cookie value
+ * - Expiration/Life time
  */
 class Cookie extends CookieAbstract implements CookieInterface
 {
 
     /**
-     * @param string $name
-     * @param mixed  $value Default: `null`
-     * @param DateTime $valid_until Instance of `DateTime`, default: `null`
+     * @param string   $name    Cookie name
+     * @param mixed    $value   Cookie value, default: `null`
+     * @param DateTime $expire `DateTime` instance, default: `null`
      *
      * @uses setName()
      * @uses setValue()
      * @uses setValidUntil()
      */
-    public function __construct($name, $value = null, \DateTime $valid_until = null)
+    public function __construct($name, $value = null, \DateTime $expire = null)
     {
         $this->setName(  $name );
         $this->setValue( $value );
-        $this->setValidUntil( $valid_until );
+        $this->setExpiration( $expire );
     }
 
 

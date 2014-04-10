@@ -27,12 +27,18 @@ namespace tomkyle\Cookies;
 
 /**
  * RequestCookie
+ *
+ * Represents a cookie sent along with the current request.
+ * For instantiation, just pass in its name and,
+ * optionally, a PHP filter constant.
+ *
+ * By default, `FILTER_SANITIZE_STRING` will be used.
  */
 class RequestCookie extends CookieAbstract implements CookieInterface
 {
 
     /**
-     * @param string $name
+     * @param string $name   Request cookie name
      * @param int    $filter PHP Filter constant, default: `FILTER_SANITIZE_STRING`
      */
     public function __construct( $name, $filter = \FILTER_SANITIZE_STRING )
