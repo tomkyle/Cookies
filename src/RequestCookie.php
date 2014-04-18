@@ -41,12 +41,14 @@ class RequestCookie extends CookieAbstract implements CookieInterface
      * @param string $name   Request cookie name
      * @param int    $filter PHP Filter constant, default: `FILTER_SANITIZE_STRING`
      */
-    public function __construct( $name, $filter = \FILTER_SANITIZE_STRING )
+    public function __construct( $name, $filter = \FILTER_SANITIZE_STRING, &$input = array() )
     {
         $this->setName( $name );
 
-        $value = filter_input( \INPUT_COOKIE, $name, $filter );
-        $this->setValue( $value );
+        if (is_null( $filter )) {
+            $filter = \FILTER_SANITIZE_STRING;
+        }
+        $this->setValue( $this->getFiltered( $input ?: $_COOKIE, $name, $filter ) );
     }
 
 
@@ -55,6 +57,13 @@ class RequestCookie extends CookieAbstract implements CookieInterface
         return $this->getValue() ?: '';
     }
 
+
+    protected function getFiltered(&$input, $field, $filter = \FILTER_SANITIZE_STRING)
+    {
+        return ( isset($input[ $field ]))
+        ? filter_var( $input[ $field ], $filter )
+        : null;
+    }
 
 
 
