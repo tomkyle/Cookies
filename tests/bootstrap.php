@@ -14,8 +14,6 @@ if (!is_readable( $autoloader )) {
 }
 require $autoloader;
 
-
-
 // Extended PHPUnit_Framework_TestCase class
 // with common stuff
 require __DIR__ . '/PHPUnit_Framework_TestCase.php';
