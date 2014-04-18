@@ -60,8 +60,8 @@ This library has no dependencies. Install from command line or `composer.json` f
 
 
 ##Testing
-There is a PHPUnit test suite boilerplate in the `tests` directory, neither used nor implemented. Yet.
 
+Simply issue `phpunit` to run the test suites; you may have to `composer update`first.
 
 
 
