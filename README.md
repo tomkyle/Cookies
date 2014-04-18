@@ -2,10 +2,10 @@
 
 Small and simple PHP library for dealing with cookies.
 
+##Set  cookie
 ```php
 <?php
 use \tomkyle\Cookies\Cookie;
-use \tomkyle\Cookies\RequestCookie;
 use \tomkyle\Cookies\SendCookie;
 use \tomkyle\Cookies\UnsetCookie;
 
@@ -18,11 +18,6 @@ $c1->setExpiration( new \DateTime( "14day" ));
 // Fire cookie:
 new SendCookie( $c1 );
 
-// Retrieve cookie from next request:
-$rc = new RequestCookie("foo");
-echo $rc; // outputs "bar"
-echo $rc->getValue(); // outputs "bar"
-
 // Another example
 $c2 = new Cookie( "any", "val", new \DateTime( "tomorrow" ) );
 new SendCookie( $c2 );
@@ -31,6 +26,22 @@ new SendCookie( $c2 );
 new UnsetCookie( $c2 );
 ```
 
+
+##Retrieve cookie
+```php
+<?php
+use \tomkyle\Cookies\Cookie;
+use \tomkyle\Cookies\RequestCookie;
+use \tomkyle\Cookies\SendCookie;
+
+// Fire cookie:
+new SendCookie( new Cookie( "foo", "bar" ) );
+
+// Retrieve cookie from next request:
+$rc = new RequestCookie("foo");
+echo $rc; // outputs "bar"
+echo $rc->getValue(); // outputs "bar"
+```
 
 
 ##Installation via Composer
