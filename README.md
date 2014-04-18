@@ -4,7 +4,6 @@ Small and simple PHP library for dealing with cookies.
 
 [![Build Status](https://travis-ci.org/tomkyle/Cookies.svg?branch=master)](https://travis-ci.org/tomkyle/Cookies)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tomkyle/Cookies/badges/quality-score.png?s=e1e8eaac2d69db9564c723d289bea895e1976bb9)](https://scrutinizer-ci.com/g/tomkyle/Cookies/)
-[![Code Coverage](https://scrutinizer-ci.com/g/tomkyle/Cookies/badges/coverage.png?s=2015fc15bd69cc3e0b1b68ba0368d23dfe15f206)](https://scrutinizer-ci.com/g/tomkyle/Cookies/)
 [![Coverage Status](https://coveralls.io/repos/tomkyle/Cookies/badge.png)](https://coveralls.io/r/tomkyle/Cookies)
 
 
