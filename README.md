@@ -18,6 +18,11 @@ $c1->setExpiration( new \DateTime( "14day" ));
 // Fire cookie:
 new SendCookie( $c1 );
 
+// Retrieve cookie from next request:
+$rc = new RequestCookie("foo");
+echo $rc; // outputs "bar"
+echo $rc->getValue(); // outputs "bar"
+
 // Another example
 $c2 = new Cookie( "any", "val", new \DateTime( "tomorrow" ) );
 new SendCookie( $c2 );
