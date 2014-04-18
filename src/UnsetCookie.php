@@ -38,15 +38,21 @@ class UnsetCookie
 {
 
 
-    public function __construct( CookieInterface $cookie )
+    public function __construct( CookieInterface $cookie, &$target_array = null )
     {
         $name  = $cookie->getName();
 
         // Empty cookie itself
         $cookie->setValue( null );
 
+
         // Un-populate current superglobals
-        unset( $_COOKIE[ $name ] );
+        if (is_array($target_array)) {
+            unset( $target_array[ $name ] );
+        }
+        else {
+            unset( $_COOKIE[ $name ] );
+        }
 
         // Unset over HTTP
         setcookie( $name, null, -1 );

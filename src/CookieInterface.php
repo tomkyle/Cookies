@@ -34,19 +34,22 @@ interface CookieInterface
 {
 
     /**
-     * @param string $value
+     * @param  string $value
+     * @return CookieInterface Fluent Interface
      */
     public function setValue( $value );
     public function getValue();
 
     /**
-     * @param string $name
+     * @param  string $name
+     * @return CookieInterface Fluent Interface
      */
     public function setName( $name );
     public function getName();
 
     /**
      * @param /DateTime $expire Expiration `DateTime` instance
+     * @return CookieInterface Fluent Interface
      */
     public function setExpiration( \DateTime $expire = null);
     public function getExpiration();

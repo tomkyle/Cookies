@@ -55,7 +55,8 @@ abstract class CookieAbstract implements CookieInterface
 
 
     /**
-     * @param string $value
+     * @param  string $value
+     * @return CookieAbstract Fluent Interface
      */
     public function setValue( $value )
     {
@@ -72,7 +73,8 @@ abstract class CookieAbstract implements CookieInterface
 
 
     /**
-     * @param string $name
+     * @param  string $name
+     * @return CookieAbstract Fluent Interface
      */
     public function setName( $name )
     {
@@ -89,6 +91,7 @@ abstract class CookieAbstract implements CookieInterface
 
     /**
      * @param /DateTime $expire Expiration `DateTime` instance
+     * @return CookieAbstract Fluent Interface
      */
     public function setExpiration( \DateTime $expire = null)
     {

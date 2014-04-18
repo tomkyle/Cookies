@@ -18,6 +18,11 @@ $c1->setExpiration( new \DateTime( "14day" ));
 // Fire cookie:
 new SendCookie( $c1 );
 
+// Retrieve cookie from next request:
+$rc = new RequestCookie("foo");
+echo $rc; // outputs "bar"
+echo $rc->getValue(); // outputs "bar"
+
 // Another example
 $c2 = new Cookie( "any", "val", new \DateTime( "tomorrow" ) );
 new SendCookie( $c2 );
@@ -60,8 +65,8 @@ This library has no dependencies. Install from command line or `composer.json` f
 
 
 ##Testing
-There is a PHPUnit test suite boilerplate in the `tests` directory, neither used nor implemented. Yet.
 
+Simply issue `phpunit` to run the test suites; you may have to `composer update`first.
 
 
 

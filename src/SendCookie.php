@@ -50,7 +50,7 @@ class SendCookie
 {
 
 
-    public function __construct( CookieInterface $cookie )
+    public function __construct( CookieInterface $cookie, &$target_array = null)
     {
         $name  = $cookie->getName();
         $value = $cookie->getValue();
@@ -58,8 +58,13 @@ class SendCookie
         $expire = $cookie->getExpiration();
         $expire = $expire ? $expire->getTimestamp() : null;
 
-        // Populate current superglobals
-        $_COOKIE[ $name ] = $value;
+        // Populate current superglobals (or overriden one)
+        if (is_array($target_array)) {
+            $target_array[ $name ] = $value;
+        }
+        else {
+            $_COOKIE[ $name ] = $value;
+        }
 
         // Unset over HTTP
         setcookie( $name, $value, $expire );
